@@ -30,6 +30,8 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
         telegramBot.setUpdatesListener(this);
     }
 
+
+//    делаем ключевые слова реагирования бота
     @Override
     public int process(List<Update> updates) {
         updates.forEach(update -> {
@@ -78,6 +80,9 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
 //        });
 //        return UpdatesListener.CONFIRMED_UPDATES_ALL;
 //    }
+
+
+//    выведены методы под ключевые слова
     private void taskMessage1(long chatId, String userName) {
         SendMessage message = new SendMessage(chatId, "Пользователь - " +userName + ". Введите задачу в формате dd.mm.yyyy hh:mm Задача (пример: 12.02.2023 10:45 Сходить в магазин.)");
         SendResponse response = telegramBot.execute((message));
